@@ -386,10 +386,16 @@ span.icon-bar {
   font-size: var(--font-md);
 }
 
-.work-subgrid img {
+.courses-subgrid img {
   width: 100%;
   height: auto;
   opacity: 0.9;
+}
+
+.courses-subgrid p {
+  text-align: center;
+  padding: 1em;
+  font-weight: 300;
 }
 
 /* ——————————————————————————————————-
