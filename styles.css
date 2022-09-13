@@ -223,11 +223,18 @@ span.icon-bar {
   place-content: center;
 }
 
+.hero img {
+  width: 100px;
+  display: block;
+  margin: 0px auto;
+  padding-bottom: 1em;
+}
+
 .hero h1 {
   color: var(--white);
   font-size: var(--font-lg);
   text-align: center;
-  font-family: var(--font-Rye);
+  font-family: var(--font-Noto);
   font-weight: 100;
 }
 
@@ -386,13 +393,13 @@ span.icon-bar {
 }
 
 /* ——————————————————————————————————-
-              SERVICES
+              LATEST NEWS
 ————————————————————————————————————— */
 
 .services {
   grid-area: services;
   display: grid;
-  height: fit-content;
+  height: 60vh;
   background: var(--white);
   text-align: center;
   width: 100%;
@@ -416,8 +423,8 @@ span.icon-bar {
 
 .services p {
   color: var(--dark-green);
-  font-size: var(--font-md);
-  padding: 1em 1em;
+  font-size: var(--font-smm);
+  padding: 2em 1em;
 }
 
 
@@ -459,6 +466,7 @@ span.icon-bar {
 .design-by {
   font-size: var(--font-xs);
   color: var(--light-brown);
+  padding-bottom: 1em;
 }
 
 
