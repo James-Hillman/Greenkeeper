@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+:root {
+  --light-brown: #9f934d;
+  --med-brown: #4d4726;
+  --dark-brown: #383735;
+  --lightest-brown: #cfcdc7;
+  --lightest-navy: #233554;
+  --darkest-brown: rgba(24, 24, 23, 0.7);
+  --dark-slate: #495670;
+  --green: #4d704b;
+  --dark-green: #072d09cb;
+  --med-green: #54c32ccb;
+  --olive: #3e7645;
+  --lightest-orange: #c3b19d;
+  --medium-orange: #a36724;
+  --white: #ffffff;
+  --black: black;
+
+  /* ——————————————————————————————
+ VARIABLES - FONT SIZE & FAMILY
+-—————————————————————————————— */
+
+  --font-fat-face: "Abril Fatface", cursive;
+  --font-Barlow: "Barlow", sans-serif;
+  --font-Rye: "Rye", cursive;
+  --font-Noto: "Noto Serif", serif;
+  --font-Lato: "Lato", sans-serif;
+  --font-xxs: 0.6em;
+  --font-xs: 0.8em;
+  --font-sm: 0.9em;
+  --font-smm: 1em;
+  --font-md: 1.4em;
+  --font-ml: 1.6em;
+  --font-lg: 1.8em;
+  --font-lgx: 2.2em;
+  --font-xl: 2.8em;
+  --font-xxl: 5em;
+}
+
+/* ——————————————————————————————
+     GENERAL - STYLING
+—————————————————————————————— */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: var(--font-Lato);
+  font-weight: 100;
+  background-color: var(--white);
+}
+
+p {
+  font-family: var(--font-Lato);
+}
+
+/* ——————————————————————————————
+                NAV
+—————————————————————————————— */
+
+nav.navigation {
+  position: relative;
+  height: 3em;
+  width: 100%;
+  background: var(--olive);
+  display: block;
+}
+
+ul.nav-menu,
+ul.nav-menu li,
+ul.nav-menu li a {
+  float: left;
+  list-style: none;
+  font-size: var(--font-smm);
+  font-weight: 100;
+  font-family: var(--font-Noto);
+}
+ul.nav-menu {
+  padding-left: 10px;
+  padding: 0em 2em;
+}
+ul.nav-menu li a {
+  padding: 0 10px;
+  color: var(--white);
+  text-decoration: none;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  font-weight: bold;
+}
+ul.nav-menu li a:hover {
+  color: var(--white);
+}
+.nav-toggle {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+span.icon-bar {
+  position: absolute;
+  right: 32px;
+  display: block;
+  width: 26px;
+  height: 4px;
+  background-color: var(--white);
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.icon-bar:nth-child(1) {
+  top: 17px;
+}
+.icon-bar:nth-child(2) {
+  top: 24px;
+}
+.icon-bar:nth-child(3) {
+  top: 31px;
+}
+.nav-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--white);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ——————————————————————————————
+      ICON BARS NAVIGATION
+  —————————————————————————————— */
+
+.nav-toggle.active .icon-bar:nth-child(1) {
+  top: 24px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.nav-toggle.active .icon-bar:nth-child(2) {
+  width: 0;
+}
+.nav-toggle.active .icon-bar:nth-child(3) {
+  top: 24px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* ——————————————————————————————————-
+     MEDIA QUERIES - NAVIGATION
+————————————————————————————————————— */
+
+/* ------- Navigation Menu ------- */
+
+@media screen and (max-width: 900px) {
+  ul.nav-menu {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--olive);
+    opacity: 0.9;
+  }
+  ul.nav-menu.active {
+    height: auto;
+  }
+  ul.nav-menu li {
+    width: 100%;
+  }
+  ul.nav-menu li a {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: var(--green); /* background of toggle menu */
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+@media screen and (max-width: 900px) {
+  .nav-overlay.active {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+/* ——————————————————————————————————-
+              HERO
+————————————————————————————————————— */
+
+.hero {
+  background-image: linear-gradient(
+      rgba(202, 204, 211, 0.7),
+      rgba(48, 50, 58, 0.7)),
+    url(images/wrapper.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: var(--font-lg);
+  text-align: center;
+  font-family: var(--font-Rye);
+  font-weight: 100;
+}
+
+.hero h3 {
+  color: var(--white);
+  font-size: var(--font-sm);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.hero-btn {
+  display: block;
+  margin: 0px auto;
+  margin-top: 4em;
+  background: transparent;
+  padding: 10px;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hero-btn a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* ——————————————————————————————————-
+              BARBER
+————————————————————————————————————— */
+
+.top-container {
+  display: block;
+}
+
+.barber {
+  background: var(--green);
+  height: 50vh;
+  padding: 1.5em;
+  display: grid;
+  place-items: center;
+}
+
+.barber-text h2 {
+  text-align: center;
+  font-size: var(--font-md);
+  color: var(--white);
+  font-family: var(--font-Noto);
+  font-weight: 100;
+}
+
+.barber-text .sub-header {
+  color: var(--white);
+}
+
+.barber-text p {
+  text-align: center;
+  font-size: var(--font-smm);
+  color: var(--darkest-brown);
+  padding: 0em 2em;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ——————————————————————————————————-
+              CUT LIKE PROS
+————————————————————————————————————— */
+
+.cut-like-pros {
+  background: var(--white);
+  place-items: center;
+  height: 50vh;
+  padding: 1em;
+  display: grid;
+  place-items: center;
+}
+
+.cut-like-pros-text h2 {
+  text-align: center;
+  font-size: var(--font-md);
+  padding: 0.5em;
+  color: var(--black);
+  font-family: var(--font-Noto);
+  font-weight: 100;
+}
+
+.cut-like-pros-text p {
+  text-align: center;
+  font-size: var(--font-smm);
+  color: var(--darkest-brown);
+  padding: 0em 2em;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ——————————————————————————————————-
+              LOCATION
+————————————————————————————————————— */
+
+.location {
+  background: var(--green);
+  display: grid;
+  place-items: center;
+  height: 50vh;
+}
+
+#location-icon {
+  display: block;
+  margin: 0px auto;
+  margin-bottom: 1em;
+}
+
+.location-text h2 {
+  text-align: center;
+  font-size: var(--font-md);
+  padding-bottom: 1em;
+  color: var(--white);
+  font-weight: 100;
+  font-family: var(--font-Noto);
+}
+
+.location-text p {
+  text-align: center;
+  font-size: var(--font-smm);
+  color: var(--white);
+  padding: 0em 2em;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ——————————————————————————————————-
+ LATEST COURSES————————————————————— */
+
+.latest-courses {
+  font-size: var(--font-md);
+  text-align: center;
+  text-transform: capitalize;
+  padding: 1em;
+  font-family: var(--font-Noto);
+  color: var(--light-brown);
+  padding: 1em 0;
+  font-size: var(--font-xl);
+  background: var(--white);
+}
+
+.latest-courses h2 {
+  font-family: var(--font-Noto);
+  color: var(--dark-slate);
+  padding: 1em 0;
+  font-size: var(--font-md);
+}
+
+.work-subgrid img {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ——————————————————————————————————-
+              SERVICES
+————————————————————————————————————— */
+
+.services {
+  grid-area: services;
+  display: grid;
+  height: fit-content;
+  background: var(--white);
+  text-align: center;
+  width: 100%;
+}
+
+.services-header {
+  font-family: var(--font-Noto);
+  color: var(--light-brown);
+  padding: 40px 0;
+  font-size: var(--font-xl);
+  text-align: center;
+  background: var(--white);
+}
+
+.services h2 {
+  font-family: var(--font-Noto);
+  color: var(--green);
+  padding: 1em 0;
+  font-size: var(--font-md);
+}
+
+.services p {
+  color: var(--dark-green);
+  font-size: var(--font-md);
+  padding: 1em 1em;
+}
+
+
+
+/* ——————————————————————————————————-
+          SOCIALS
+————————————————————————————————————— */
+
+.socials {
+  height: fit-content;
+  background: var(--green);
+  text-align: center;
+}
+
+.socials h2 {
+  padding: 1.5em;
+  font-size: var(--font-md);
+  color:var(--white);
+}
+.socials i {
+  font-size: 2em;
+  color: var(--light-brown);
+  padding: 0.25em;
+}
+
+/* ——————————————————————————————————-
+          COPYRIGHT
+————————————————————————————————————— */
+
+.copyright {
+  color: var(--white);
+}
+
+.copyright-text {
+  margin-top: 4em;
+  font-size: var(--font-xxs);
+}
+
+.design-by {
+  font-size: var(--font-xs);
+  color: var(--light-brown);
+}
+
+
+
+
+
+
+
+/* ——————————————————————————————
+      MEDIA QUERIES DESKTOP VIEW 800px and ABOVE
+  —————————————————————————————— */
+
+  
